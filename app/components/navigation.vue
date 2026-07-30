@@ -17,7 +17,7 @@ watch(group, () => {
 
 const pageConfig = {
   appBar: {
-    color: '#407348',
+    color: '#002855',
     height: {
       mobile: 44,
       desktop: 68
@@ -35,9 +35,9 @@ const pageConfig = {
       link: '/'
     },
     items: [
-      { title: 'Services', link: '/services' },
-      { title: 'Gallery', link: '/gallery' },
-      { title: 'Contact Me', link: '/contact' }
+      { title: 'Daelon Kingore', link: '/' },
+      { title: 'Website Development', link: '/services' },
+      { title: 'My Skills', link: '/contact' }
     ]
   },
   behavior: {
@@ -75,12 +75,12 @@ const appBarHeight = computed(() =>
     <!-- DESKTOP -->
     <v-tabs v-else v-model="tab">
       <!-- Logo tab -->
-      <v-tab :to="pageConfig.appBar.logo.link">
+      <!-- <v-tab :to="pageConfig.appBar.logo.link">
         <v-img
           :src="pageConfig.appBar.logo.src"
           :width="pageConfig.appBar.logo.desktopWidth"
         />
-      </v-tab>
+      </v-tab> -->
 
       <!-- Nav items -->
       <v-tab

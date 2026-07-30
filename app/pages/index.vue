@@ -1,59 +1,28 @@
 <script setup>
     import { useDisplay } from 'vuetify';
-    import HeroCarousel  from '@/components/HeroCarousel.vue';
-    import ImageWithText  from '@/components/ImageWithText.vue';
+    import HeroCarousel  from '@/components/heroCarousel.vue';
+    import ImageWithText  from '@/components/imageWithText.vue';
     
     import exampleImg from '@/assets/wood-slabs/slabs_on_mill.jpg'
     
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
 
-const heroBlock = {
-  type: "carousel",
-
-  height: "70vh",
-  interval: 8000,
-
-  slides: [
-    {
-      type: "hero",
-      imageUrl: exampleImg,
-      title: "Custom Milling Done Right",
-      subtitle: "We turn raw logs into beautiful lumber",
-      button: {
-        text: "View Services",
-        to: "/services"
-      }
-    },
-    {
-      type: "hero",
-      imageUrl: exampleImg,
-      title: "Contact Me",
-      subtitle: "Reach out for quotes and info",
-      button: {
-        text: "Contact",
-        to: "/contact"
-      }
-    }
-  ]
-}
-
-
 const pageData = {
-  title: "TITLE",
+  title: "Daelon Kingore",
   subtitle: "Secondary Title",
 
   sections: [
     {
       type: "imageWithText",
       text: "Example Text",
-      imageUrl: exampleImg,
+      imageUrl: "",
       layout: "right",
       variant: "card"
     },
     {
       type: "imageWithText",
       text: "Example Text",
-      imageUrl: exampleImg,
+      imageUrl: "",
       layout: "left",
       variant: "minimal"
     }
@@ -71,16 +40,11 @@ const resolveComponent = (type) => {
 </script>
 
 <template>
-  <h1 :class="mobile ? 'pt-6 main-header-small' : 'main-header'" class="header-color main-header-spacing mt-0">
+  <h1 :class="mobile ? 'pt-6 main-header-small' : 'main-header'" class="header-color main-header-spacing mt-0 rounded rounded-box">
     {{ pageData.title }}
   </h1>
 
-  <component
-    :is="resolveComponent(heroBlock.type)"
-    :block="heroBlock"
-  />
-
-  <h2 :class="mobile ? 'h2-subheading mb-6' : 'loud-header-h2'">
+  <h2 :class="mobile ? 'h2-subheading mb-6' : 'loud-header-h2'" class="header-color">
     {{ pageData.subtitle }}
   </h2>
 
@@ -104,6 +68,12 @@ const resolveComponent = (type) => {
     .v-container {
         margin-bottom: 5px;
         padding-top: 0px;
+    }
+
+    .rounded-box {
+      border-radius: 12px;
+      width: 70%;
+      margin: 0 auto;
     }
 
     /* MOBILE */

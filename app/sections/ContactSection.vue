@@ -22,14 +22,24 @@ defineProps({
     >
       <p>
         {{ contacts.intro }}
-        <a :href="contacts.facebookLink" target="_blank">
-          <b>Facebook</b>
+        <a :href="contacts.githubLink" target="_blank">
+          <b>Github</b>
         </a>
       </p>
 
       <p class="bordered-text">
-        <span v-if="contacts.phone">Text: <b>{{ contacts.phone }}</b></span><br>
-        <span v-if="contacts.email">Email: <b>{{ contacts.email }}</b></span><br>
+        <span v-if="contacts.phone">Text: <b>{{ contacts.phone }}</b><br></span>
+        <span v-if="contacts.email">Email me at 
+          <b>
+            <a
+              href="mailto:daelonkingore@gmail.com?subject=Website%20Inquiry"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ contacts.email }}
+            </a>
+          </b>
+        </span><br>
         <a v-if="contacts.marketplace" :href="contacts.marketplace.marketplaceLink" target="_blank">
           <b>{{ contacts.marketplace.marketplaceText }}</b>
         </a>
@@ -67,12 +77,4 @@ defineProps({
 </template>
 
 <style scoped>
-.bordered-text {
-  border: rgb(187, 187, 187) solid 2px;
-  border-radius: 15px;
-  display: inline-block;
-  padding: 15px;
-  margin: 10px;
-  line-height: 28px;
-}
 </style>

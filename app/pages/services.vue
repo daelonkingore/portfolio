@@ -1,5 +1,5 @@
 <script setup>
-import ImageWithText from '@/components/ImageWithText.vue'
+import ImageWithText from '@/components/imageWithText.vue'
 import { useDisplay } from 'vuetify'
 import PricingSection from '@/sections/PricingSection.vue'
 import FaqSection from '@/sections/FaqSection.vue'
@@ -128,7 +128,7 @@ const pageData = {
   </div>
 
   <!-- SERVICES HEADER -->
-  <h2 :class="mobile ? 'h2-subheading mb-4' : 'loud-header-h2 mb-7'">
+  <h2 :class="mobile ? 'h2-subheading mb-4' : 'loud-header-h2 mb-7'" class="header-color">
     {{ pageData.servicesHeading }}
   </h2>
 
